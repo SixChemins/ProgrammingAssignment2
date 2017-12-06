@@ -2,17 +2,17 @@
 # This function define a list of sub-process :
 # - On one hand set and get for matrix
 # - On other hand set solve and get solve of matrix
-makeCacheMatrix  <-  function(mymatrix = matrix())
+makeCacheMatrix  <-  function(x = matrix())
 {
   m <- NULL
   # set matrix's value
   set <- function(y) 
   {
-    mymatrix <<- y
+    x <<- y
     m <<- NULL
   }
   #get matrix's value
-  get <- function() mymatrix
+  get <- function() x
   # set matrix's solve(inverse)
   setsolve <- function(solve) m <<- solve
   # get matrix's solve(inverse)
@@ -41,5 +41,3 @@ cacheSolve <- function(x, ...)
   x$setsolve(m)
   m
 }
-
-
